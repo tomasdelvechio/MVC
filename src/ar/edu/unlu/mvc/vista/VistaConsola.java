@@ -10,42 +10,34 @@ import ar.edu.unlu.mvc.modelo.Tarea;
 public class VistaConsola {
 
 	private Controlador controlador;
+	private OpcionesMenu opcion = OpcionesMenu.INICIO;
 
 	public void setControlador(Controlador controlador) {
 		this.controlador = controlador;
 	}
 
 	public void mostrarMenu() {
-		System.out.println("1) crear tarea");
-		System.out.println("2) listar tareas");
-		System.out.println("3) marcar tarea como completada");
-		System.out.println("4) eliminar tarea");
-		System.out.println("5) salir");
+		OpcionesMenu.mostrarOpciones();
 	}
 
 	public void iniciar() {
 		try (Scanner sc = new Scanner(System.in)) {
-			int opcion = 0;
-			while (opcion != 5) {
+			while (opcion != OpcionesMenu.SALIR) {
 				mostrarMenu();
-				opcion = sc.nextInt();
+				opcion = OpcionesMenu.values()[sc.nextInt()];
 				switch (opcion) {
-					case 1: {
+					case CREAR_TAREA:
 						crearTarea();
 						break;
-					}
-					case 2: {
+					case LISTAR_TAREA:
 						listarTarea();
 						break;
-					}
-					case 3: {
+					case MARCAR_TAREA_COMPLETA:
 						marcarTareaComoCompletada();
 						break;
-					}
-					case 4: {
+					case ELIMINAR_TAREA:
 						eliminarTarea();
 						break;
-					}
 					default:
 						break;
 				}
