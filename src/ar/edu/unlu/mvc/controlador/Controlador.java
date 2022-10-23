@@ -7,12 +7,12 @@ import ar.edu.unlu.mvc.modelo.Observado;
 import ar.edu.unlu.mvc.modelo.Tarea;
 import ar.edu.unlu.mvc.vista.VistaConsola;
 
-public class ObserverConcreto implements Observer {
+public class Controlador implements Observer {
 	
 	private AdministradorDeTareas modelo;
 	private VistaConsola vista;
 	
-	public ObserverConcreto(AdministradorDeTareas administradorDeTareas, VistaConsola vista) {
+	public Controlador(AdministradorDeTareas administradorDeTareas, VistaConsola vista) {
 		this.modelo = administradorDeTareas;
 	}
 	

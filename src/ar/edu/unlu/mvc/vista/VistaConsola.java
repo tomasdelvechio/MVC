@@ -3,15 +3,15 @@ package ar.edu.unlu.mvc.vista;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import ar.edu.unlu.mvc.controlador.ObserverConcreto;
+import ar.edu.unlu.mvc.controlador.Controlador;
 import ar.edu.unlu.mvc.modelo.Observado;
 import ar.edu.unlu.mvc.modelo.Tarea;
 
 public class VistaConsola {
 
-	private ObserverConcreto controlador;
+	private Controlador controlador;
 
-	public void setControlador(ObserverConcreto controlador) {
+	public void setControlador(Controlador controlador) {
 		this.controlador = controlador;
 	}
 
