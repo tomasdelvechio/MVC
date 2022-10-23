@@ -2,10 +2,10 @@ package ar.edu.unlu.mvc.modelo;
 
 import java.util.LinkedList;
 
-import ar.edu.unlu.mvc.commons.Observado;
+import ar.edu.unlu.mvc.commons.AdministradorDeTareasObservada;
 import ar.edu.unlu.mvc.commons.Observer;
 
-public class AdministradorDeTareas implements Observado {
+public class AdministradorDeTareas implements AdministradorDeTareasObservada {
 	
 	private LinkedList<Tarea> tareas = new LinkedList<Tarea>();
 	private LinkedList<Observer> observadores = new LinkedList<Observer>();
@@ -39,7 +39,7 @@ public class AdministradorDeTareas implements Observado {
 	@Override
 	public void notificarObservers() {
 		for(Observer o : this.observadores)
-			o.update(this,"nueva-lista");
+			o.update(this);
 	}
 
 	@Override

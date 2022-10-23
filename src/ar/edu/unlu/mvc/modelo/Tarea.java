@@ -2,10 +2,10 @@ package ar.edu.unlu.mvc.modelo;
 
 import java.util.LinkedList;
 
-import ar.edu.unlu.mvc.commons.Observado;
 import ar.edu.unlu.mvc.commons.Observer;
+import ar.edu.unlu.mvc.commons.TareaObservada;
 
-public class Tarea implements Observado{
+public class Tarea implements TareaObservada{
 	private static int id = 0;
 	private int idTarea;
 	private String titulo;
@@ -43,7 +43,7 @@ public class Tarea implements Observado{
 	@Override
 	public void notificarObservers() {
 		for(Observer o : this.observadores)
-			o.update(this,"tarea-creada-modificada");
+			o.update(this);
 	}
 
 	@Override

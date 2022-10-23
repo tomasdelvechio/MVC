@@ -2,8 +2,10 @@ package ar.edu.unlu.mvc.controlador;
 
 import java.util.LinkedList;
 
+import ar.edu.unlu.mvc.commons.AdministradorDeTareasObservada;
 import ar.edu.unlu.mvc.commons.Observado;
 import ar.edu.unlu.mvc.commons.Observer;
+import ar.edu.unlu.mvc.commons.TareaObservada;
 import ar.edu.unlu.mvc.modelo.AdministradorDeTareas;
 import ar.edu.unlu.mvc.modelo.Tarea;
 import ar.edu.unlu.mvc.vista.VistaConsola;
@@ -17,14 +19,13 @@ public class Controlador implements Observer {
 		this.modelo = administradorDeTareas;
 		this.vista = vista;
 	}
-	
-	@Override
-	public void update(Observado observado, String info) {
-		if(info.equals("tarea-creada-modificada\"")) {
-			vista.mostrarTarea(observado);
-		} else if(info.equals("nueva-lista")) {
-			vista.listarTarea();
-		}
+
+	public void update(TareaObservada observado) {
+		vista.mostrarTarea(observado);
+	}
+
+	public void update(AdministradorDeTareasObservada observado) {
+		vista.listarTarea();
 	}
 	
 	public void crearTarea(String titulo, String descripcion) {
@@ -41,6 +42,11 @@ public class Controlador implements Observer {
 
 	public void marcarCompleta(int id) {
 		modelo.completarTarea(id);
+	}
+
+	@Override
+	public void update(Observado observado) {
+		// No usar
 	}
 	
 }
