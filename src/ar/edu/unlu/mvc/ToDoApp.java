@@ -8,8 +8,8 @@ public class ToDoApp {
     public static void main(String[] args) {
         AdministradorDeTareas modelo = new AdministradorDeTareas();
         VistaConsola vista = new VistaConsola();
-        Controlador obs = new Controlador(modelo, vista);
-        vista.setControlador(obs);
+        Controlador controlador = new Controlador(modelo, vista);
+        vista.setControlador(controlador);
         vista.iniciar();
     }
 }
