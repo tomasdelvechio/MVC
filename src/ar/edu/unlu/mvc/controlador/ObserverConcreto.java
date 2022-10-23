@@ -15,15 +15,6 @@ public class ObserverConcreto implements Observer {
 	public ObserverConcreto(AdministradorDeTareas administradorDeTareas, VistaConsola vista) {
 		this.modelo = administradorDeTareas;
 	}
-
-	
-	public static void main (String[] args) {
-		AdministradorDeTareas modelo = new AdministradorDeTareas();
-		VistaConsola vista = new VistaConsola();
-		ObserverConcreto obs = new ObserverConcreto(modelo,vista);
-		vista.setControlador(obs);
-		vista.iniciar();
-	}
 	
 	@Override
 	public void update(Observado observado, String info) {
