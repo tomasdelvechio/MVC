@@ -8,14 +8,13 @@ import ar.edu.unlu.mvc.modelo.Observado;
 import ar.edu.unlu.mvc.modelo.Tarea;
 
 public class VistaConsola {
-	
+
 	private ObserverConcreto controlador;
-	
 
 	public void setControlador(ObserverConcreto controlador) {
 		this.controlador = controlador;
 	}
-	
+
 	public void mostrarMenu() {
 		System.out.println("1) crear tarea");
 		System.out.println("2) listar tareas");
@@ -23,31 +22,33 @@ public class VistaConsola {
 		System.out.println("4) eliminar tarea");
 		System.out.println("5) salir");
 	}
-	
+
 	public void iniciar() {
 		Scanner sc = new Scanner(System.in);
 		int opcion = 0;
-		while(opcion != 5) {
+		while (opcion != 5) {
 			mostrarMenu();
 			opcion = sc.nextInt();
-			switch(opcion) {
-			case 1:{
-				crearTarea();
-				break;
-			}
-			case 2:{
-				listarTarea();
-				break;
-			}
-			case 3:{
-				marcarTareaComoCompletada();
-				break;
-			}
-			case 4:{
-				eliminarTarea();
-				break;
-			} default : break;
-			
+			switch (opcion) {
+				case 1: {
+					crearTarea();
+					break;
+				}
+				case 2: {
+					listarTarea();
+					break;
+				}
+				case 3: {
+					marcarTareaComoCompletada();
+					break;
+				}
+				case 4: {
+					eliminarTarea();
+					break;
+				}
+				default:
+					break;
+
 			}
 		}
 	}
@@ -61,19 +62,19 @@ public class VistaConsola {
 		controlador.crearTarea(titulo, descripcion);
 		System.out.println("Tarea creada..");
 	}
-	
+
 	public void listarTarea() {
 		LinkedList<Tarea> tareas = controlador.obtenerListaDeTarea();
-		for(Tarea t : tareas) 
+		for (Tarea t : tareas)
 			this.mostrarTarea(t);
-		
+
 	}
 
 	private void eliminarTarea() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("ingrese el id de la tarea a eliminar");
 		int id = sc.nextInt();
-		controlador.eliminarTarea(id);	
+		controlador.eliminarTarea(id);
 		System.out.println("Tarea eliminada..");
 	}
 
@@ -81,17 +82,16 @@ public class VistaConsola {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("ingrese el id de la tarea a marcar como completa");
 		int id = sc.nextInt();
-		controlador.marcarCompleta(id);	
+		controlador.marcarCompleta(id);
 		System.out.println("Tarea modificada..");
 	}
 
 	public void mostrarTarea(Observado observado) {
-		System.out.println("TAREA: "+((Tarea)observado).getId()+"--------------------------------");
-		System.out.println("Titulo: "+ ((Tarea)observado).getTitulo());
-		System.out.println("Descripcion: "+ ((Tarea)observado).getDescripcion());
-		System.out.println("completa?: "+ ((Tarea)observado).isCompleta());
+		System.out.println("TAREA: " + ((Tarea) observado).getId() + "--------------------------------");
+		System.out.println("Titulo: " + ((Tarea) observado).getTitulo());
+		System.out.println("Descripcion: " + ((Tarea) observado).getDescripcion());
+		System.out.println("completa?: " + ((Tarea) observado).isCompleta());
 		System.out.println("-------------------------------------");
 	}
 
-	
 }
