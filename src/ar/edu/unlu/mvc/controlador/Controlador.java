@@ -2,8 +2,9 @@ package ar.edu.unlu.mvc.controlador;
 
 import java.util.LinkedList;
 
+import ar.edu.unlu.mvc.commons.Observado;
+import ar.edu.unlu.mvc.commons.Observer;
 import ar.edu.unlu.mvc.modelo.AdministradorDeTareas;
-import ar.edu.unlu.mvc.modelo.Observado;
 import ar.edu.unlu.mvc.modelo.Tarea;
 import ar.edu.unlu.mvc.vista.VistaConsola;
 

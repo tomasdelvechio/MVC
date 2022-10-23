@@ -1,6 +1,4 @@
-package ar.edu.unlu.mvc.controlador;
-
-import ar.edu.unlu.mvc.modelo.Observado;
+package ar.edu.unlu.mvc.commons;
 
 public interface Observer {
 	void update(Observado observado, String info);

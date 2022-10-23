@@ -2,7 +2,8 @@ package ar.edu.unlu.mvc.modelo;
 
 import java.util.LinkedList;
 
-import ar.edu.unlu.mvc.controlador.Observer;
+import ar.edu.unlu.mvc.commons.Observado;
+import ar.edu.unlu.mvc.commons.Observer;
 
 public class Tarea implements Observado{
 	private static int id = 0;

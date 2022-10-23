@@ -3,8 +3,8 @@ package ar.edu.unlu.mvc.vista;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import ar.edu.unlu.mvc.commons.Observado;
 import ar.edu.unlu.mvc.controlador.Controlador;
-import ar.edu.unlu.mvc.modelo.Observado;
 import ar.edu.unlu.mvc.modelo.Tarea;
 
 public class VistaConsola {
