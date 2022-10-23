@@ -15,6 +15,7 @@ public class Controlador implements Observer {
 	
 	public Controlador(AdministradorDeTareas administradorDeTareas, VistaConsola vista) {
 		this.modelo = administradorDeTareas;
+		this.vista = vista;
 	}
 	
 	@Override
